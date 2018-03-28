@@ -1,0 +1,19 @@
+<h1>BBC News</h1>
+
+<p *ngIf="!newsItems"><em>Loading...</em></p>
+
+<article class="row">
+    <div class="col-sm-6 col-md-4" *ngFor="let newsItem of newsItems">
+        <div class="thumbnail">
+
+            <img src="{{newsItem.image.url}}" width="{{newsItem.image.width}}" height="{{newsItem.image.height}}">
+            <div class="caption">
+                <h3>{{newsItem.title}}</h3>
+
+                <p>{{newsItem.description}}</p>
+
+                <p><a href="{{newsItem.link}}" class="btn btn-primary" role="button" target="_blank">View</a></p>
+            </div>
+        </div>
+    </div>
+</article>
